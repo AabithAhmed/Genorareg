@@ -2,21 +2,21 @@
   "version": 2,
   "builds": [
     {
-      "src": "candidate-pass-generator/client/package.json",
+      "src": "client/package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist"
       }
     },
     {
-      "src": "candidate-pass-generator/server/api/index.ts",
+      "src": "server/api/index.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "candidate-pass-generator/server/api/index.ts"
+      "dest": "server/api/index.ts"
     },
     {
       "handle": "filesystem"
